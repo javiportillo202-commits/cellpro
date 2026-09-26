@@ -1,46 +1,26 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CELL PRO</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Poppins:wght@400;700;800&family=Montserrat:wght@400;700;800&family=Oswald:wght@500;700&family=Bebas+Neue&family=Playfair+Display:wght@700;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<style>*{margin:0;box-sizing:border-box}:root{--p:#06b6d4;--bg:#0a0f1e}body{font-family:Inter,Arial;background:var(--bg);color:#fff;text-align:center}
-.wrap{max-width:1200px;margin:0 auto;padding:0 16px}header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,15,30,.95);backdrop-filter:blur(12px);border-bottom:1px solid #1e293b}
-.h-in{max-width:1200px;margin:auto;padding:12px 16px;display:flex;justify-content:space-between;align-items:center}.h-in div{font-weight:900;font-size:18px}.h-in a{background:#1f2937;color:#fff;padding:10px 18px;border-radius:30px;text-decoration:none;font-weight:700;font-size:14px}
-.hero{padding:88px 16px 24px}.hero-in{max-width:760px;margin:0 auto}.hero h1{font-size:clamp(26px,5vw,44px);font-weight:900}.hero h1 span{color:var(--p)}.hero p{margin-top:10px;font-size:15px}
-.btn-main{display:inline-block;background:linear-gradient(135deg,#06b6d4,#3b82f6);color:#fff;padding:14px 36px;border-radius:50px;text-decoration:none;font-weight:800;margin-top:18px}
-.cats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px auto 0;max-width:600px}.cat{background:#111827;border:1px solid #243044;padding:10px 18px;border-radius:30px;cursor:pointer;font-weight:700;font-size:14px;color:#e2e8f0}.cat.active{background:var(--p);color:#fff;border-color:var(--p)}
-.sec{padding:26px 0}.grid{display:grid;gap:16px;grid-template-columns:repeat(4,1fr);margin:18px auto 0;max-width:1100px;justify-items:center}.card{background:#111827;border:1px solid #1e293b;border-radius:20px;padding:16px;display:flex;flex-direction:column;width:100%;max-width:320px}.card img{width:100%;height:150px;object-fit:cover;border-radius:14px;margin:0 auto;display:block}.precio{color:var(--p);font-weight:900;font-size:20px;margin:8px 0}.btn2{margin-top:auto;display:block;background:#1e293b;color:#fff;padding:12px;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px}
-.sgrid{display:grid;gap:14px;grid-template-columns:repeat(4,1fr);margin:16px auto 0;max-width:1100px;justify-items:center}.sgrid>div{background:#111827;border:1px solid #1e293b;border-radius:18px;padding:20px 16px;width:100%;max-width:320px}.sgrid img{width:100%;height:110px;object-fit:cover;border-radius:12px;margin:0 auto 8px;display:block}
-.wa{position:fixed;bottom:20px;right:20px;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px #0006;z-index:99;overflow:hidden;text-decoration:none}
-.hide{display:none!important}footer{padding:30px;color:#475569;border-top:1px solid #1e293b;margin-top:30px}
-#secMapa iframe{max-width:100%!important;width:100%!important;display:block;margin:0 auto;border-radius:16px}
-@media(max-width:1023px) and (min-width:768px){.grid,.sgrid{grid-template-columns:repeat(3,1fr);max-width:900px}}
-@media(max-width:767px){.grid,.sgrid{grid-template-columns:repeat(2,1fr);gap:12px;max-width:520px;padding:0 4px}.card{padding:12px}.card img{height:120px}}</style></head><body>
-<header><div class="h-in"><div id="hName">📱 CELL PRO</div><a id="hWa" href="#">💬 WhatsApp</a></div></header>
-<div class="hero" id="heroSec"><div class="hero-in"><img id="heroImg" style="max-width:280px;width:75%;border-radius:20px;display:none;margin:0 auto 14px"><h1 id="hTitle">Todo para tu celular <span>en un solo lugar</span></h1><p id="hSub">Celulares • Repuestos • Programas</p><a class="btn-main" id="heroBtn" href="#tienda">Ver catálogo 👇</a><div class="cats" id="cats"></div></div></div>
-<div class="wrap sec" id="tienda"><h2>🛍️ Productos</h2><div class="grid" id="grid"></div>
-<div id="secServ"><h2 style="margin-top:34px">⚙️ Servicios</h2><div class="sgrid" id="gridServ"></div></div>
-<div id="secPay"><h2 style="margin-top:34px">💳 Pagos</h2><div class="sgrid" id="gridPay"></div></div>
-<div id="secRedes" style="margin-top:26px"></div><div id="secMapa" style="margin-top:18px"></div></div>
-<footer id="fText">© 2026 CELL PRO</footer>
-<a class="wa" id="waF" href="#"><img id="waImg" style="width:36px;height:36px;object-fit:contain;display:none"><span id="waEmoji" style="font-size:28px">💬</span></a>
-<script>(function(){var c={};try{c=JSON.parse(localStorage.getItem('cell_cfg')||'{}')}catch(e){}
-var P=[],S=[];try{P=JSON.parse(localStorage.getItem('cell_prods')||'[]')}catch(e){}try{S=JSON.parse(localStorage.getItem('cell_servs')||'[]')}catch(e){}
-document.documentElement.style.setProperty('--p',c.cPri||'#06b6d4');document.documentElement.style.setProperty('--bg',c.cBg||'#0a0f1e');
-if(c.font)document.body.style.fontFamily=c.font;if(c.name)document.getElementById('hName').textContent=c.name;
-if(c.title)document.getElementById('hTitle').innerHTML=c.title;document.getElementById('hTitle').style.color=c.cTitleC||'#fff';
-if(c.sub)document.getElementById('hSub').textContent=c.sub;document.getElementById('hSub').style.color=c.cTextC||'#94a3b8';
-if(c.footer)document.getElementById('fText').textContent=c.footer;
-var hb=document.getElementById('heroBtn');if(c.cHeroBtn)hb.textContent=c.cHeroBtn;if(c.vHeroBtn===false)hb.style.display='none';
-if(c.heroImg&&c.cHeroImgOn!==false){var hi=document.getElementById('heroImg');hi.src=c.heroImg;hi.style.display='block'}
-var hs=document.getElementById('heroSec');if(c.heroBgImg&&c.cHeroBgOn!==false){hs.style.background='linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('+c.heroBgImg+') center/cover'}else{hs.style.background='radial-gradient(700px circle at 50% 0%,'+(c.cHeroGlow||c.cPri||'#06b6d4')+'66,transparent),linear-gradient(180deg,'+(c.cHeroBg||'#0a0f1e')+',#0f172a)'}
-var wa=c.wa||'',wf=c.waFloat||wa||'',bm=c.waMsg||'Hola, quiero info de: ',bt=c.cBtnTxt||'Consultar por WhatsApp',base=wa?'https://wa.me/'+wa+'?text=':'#';
-if(!wa)document.getElementById('hWa').style.display='none';else document.getElementById('hWa').href=base+encodeURIComponent('Hola');
-var w=document.getElementById('waF');if(!wf||c.vWaFloat===false)w.style.display='none';else{w.href='https://wa.me/'+wf+'?text='+encodeURIComponent('Hola');w.style.background=c.waColor||'#25d366';if(c.waImg){document.getElementById('waImg').src=c.waImg;document.getElementById('waImg').style.display='block';document.getElementById('waEmoji').style.display='none'}}
-var nC=Math.min(38,Math.max(2,parseInt(c.cCuotasNum||12)));function ct(p){if(c.cCuotasOn===false||!p)return '';return '<div style="color:#22c55e;font-size:12px;font-weight:700;margin-bottom:8px">💳 '+nC+'x Gs. '+Math.round(Number(p)/nC).toLocaleString()+'</div>'}
-var cats=[{k:'todos',t:'Todos',v:1},{k:'celulares',t:'📱 Celulares',v:c.vCel!==false},{k:'repuestos',t:'🔧 Repuestos',v:c.vRep!==false},{k:'programas',t:'💻 Programas',v:c.vProg!==false},{k:'desbloqueo',t:'🔓 Desbloqueo',v:c.vDes!==false},{k:'alquiler',t:'🏠 Alquiler',v:c.vAlq!==false}].filter(function(x){return x.v});
-document.getElementById('cats').innerHTML=cats.map(function(x,i){return '<div class="cat'+(i===0?' active':'')+'" data-k="'+x.k+'">'+x.t+'</div>'}).join('');
-var els=document.querySelectorAll('.cat');els.forEach(function(el){el.onclick=function(){els.forEach(function(y){y.classList.remove('active')});el.classList.add('active');render(el.dataset.k)}});
-function render(f){var l=P.filter(function(p){return f==='todos'||p.cat===f});document.getElementById('grid').innerHTML=l.map(function(p){return '<div class="card">'+(p.img?'<img src="'+p.img+'">':'<div style="font-size:48px;padding:16px">📦</div>')+'<h4 style="margin:8px 0 4px">'+p.nom+'</h4><div style="color:#94a3b8;font-size:13px">'+(p.det||'')+'</div><div class="precio">Gs. '+Number(p.pre||0).toLocaleString()+'</div>'+ct(p.pre)+'<a class="btn2" target="_blank" href="'+base+encodeURIComponent(bm+p.nom)+'">'+bt+'</a></div>'}).join('')||'<p style="color:#64748b">Sin productos</p>'}render('todos');
-if(c.vServTec===false)document.getElementById('secServ').classList.add('hide');
-document.getElementById('gridServ').innerHTML=S.map(function(s){return '<div>'+(s.img?'<img src="'+s.img+'">':'<div style="font-size:34px">⚙️</div>')+'<b>'+s.nom+'</b><br><small style="color:#94a3b8">'+(s.pre||'')+'</small><br><a class="btn2" style="margin-top:10px" target="_blank" href="'+base+encodeURIComponent(bm+s.nom)+'">'+bt+'</a></div>'}).join('');
-if(c.vPay===false)document.getElementById('secPay').classList.add('hide');
-var ph='';if(c.payBank!==false&&c.bankCta)ph+='<div><div style="font-size:30px">🏦</div><b>'+(c.bankName||'Transferencia')+'</b><br><small style="color:#94a3b8">'+c.bankCta+'</small></div>';if(c.payTigo!==false&&c.tigoNum)ph+='<div><div style="font-size:30px">📱</div><b>Tigo Money</b><br><small>'+c.tigoNum+'</small></div>';if(c.payEfec!==false)ph+='<div><div style="font-size:30px">💵</div><b>Efectivo</b></div>';if(c.payCard!==false)ph+='<div><div style="font-size:30px">💳</div><b>Tarjeta</b></div>';document.getElementById('gridPay').innerHTML=ph;if(!ph)document.getElementById('secPay').classList.add('hide');
-})();</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JaviCell</title>
+<style>body{font-family:sans-serif;margin:0;background:#f5f5f5}header{background:#111;color:#fff;padding:1rem;text-align:center}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;padding:1rem}.card{background:#fff;border-radius:12px;padding:1rem;text-align:center}.card img{width:100%;height:140px;object-fit:contain}.btn{background:#25D366;color:#fff;border:0;padding:.7rem 1rem;border-radius:8px;width:100%;cursor:pointer}</style>
+<script type="importmap">{"imports":{"firebase/app":"https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js","firebase/firestore":"https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"}}</script>
+</head>
+<body>
+<header><h1>JaviCell 📱</h1><p>Caaguazú - Paraguay</p></header>
+<div id="grid" class="grid"></div>
+<script type="module">
+import {initializeApp} from "firebase/app";
+import {getFirestore, collection, onSnapshot} from "firebase/firestore";
+const firebaseConfig = {apiKey:"AIzaSyDuCwgM1JD3KJlr8sKjVRGYgmU55nrwEeM",authDomain:"javicell-5aecd.firebaseapp.com",projectId:"javicell-5aecd",storageBucket:"javicell-5aecd.firebasestorage.app",messagingSenderId:"781066310901",appId:"1:781066310901:web:a7ffcae4644de5c53761bc"};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const grid = document.getElementById('grid');
+onSnapshot(collection(db,"products"), (snap)=>{
+  grid.innerHTML="";
+  snap.forEach(d=>{
+    const p=d.data();
+    grid.innerHTML+=`<div class="card"><img src="${p.img||'https://via.placeholder.com/200'}"><h3>${p.name}</h3><p><b>Gs. ${Number(p.price).toLocaleString('es-PY')}</b></p><button class="btn" onclick="window.open('https://wa.me/595971XXXXXX?text=Hola JaviCell, quiero ${encodeURIComponent(p.name)}')">Pedir por WhatsApp</button></div>`;
+  });
+});
+</script>
+</body></html>
